@@ -74,22 +74,27 @@ D:\> atlas/webserver >
 "password"  пароль от этой базы данных. В нашем случае от базы nodemonitoring  меняете на свой
 "database"  сама наша база (ее имя)
 
-Вам надо добиться чтобы в итоге при запуске сервер (выполнения команды в командной строке node web-server.js )  в итоге сервер запустился. 
-
+Вам надо добиться чтобы при запуске сервер (выполнения команды в командной строке node web-server.js ) выдал сделующие строки:
+```js
+controllers add
+Server listening on: 5000
+GPSMarker listening 3128
+GpsLogger listening 10100
+GpsGate listening 10005
+Profiler listening on 0.0.0.0:3131
+```
 
 Если удалось завести таблицы и стартовать сервер, открываем браузер и переходим по адресу
 http://localhost:5000  
-5000 – это  "port": 5000,   web-config.json (у меня просто 80 порт занят Apache, Вы можете регулирвать)
+5000 – это  "port": 5000,   web-config.json (вы можете изменить на любой другой свободный у вас порт к примеру: 80)
 
 Если вы создавали таблицу в базе данных импортом, то по умолчанию можно войти под 
-demo
-demo
-.
+login: demo
+pass:  demo
 
 Сервер неустойчиво, но работает для GPS Logger for Android 
 
 https://play.google.com/store/apps/details?id=com.mendhak.gpslogger&hl=ru
-
 
 Его настроки:
 Настройки -> Автоматическая отрпавка – OpenGTS настройка
