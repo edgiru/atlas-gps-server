@@ -11,7 +11,7 @@
 
 Или создать вручную базу "nodemonitor"
 
-```js
+<code>
 log ->
 CREATE TABLE IF NOT EXISTS `log` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -28,9 +28,9 @@ CREATE TABLE IF NOT EXISTS `log` (
   `sourcedata` text NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=104;
-```
+</code>
 
-```js
+<code>
 user ->
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `tracks` text NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
-```
+</code>
 
 #### Установить Node.js отсюда: http://nodejs.org/
 
@@ -57,7 +57,7 @@ D:\> atlas/webserver >   <br>
 
 Это значит что сервер не может подсоединиться к базе данных. В файле папка webserver Фалик web-config.json <br>
 
-```js
+<code>
 {
 	"port": 5000,   
 	"public" : "../public",  
@@ -68,17 +68,17 @@ D:\> atlas/webserver >   <br>
 		"database":"nodemonitor"	//"database"  сама наша база (ее имя)
 	}
 }
-````
+</code>
 
 Вам надо добиться чтобы при запуске сервер (выполнения команды в командной строке node web-server.js ) выдал сделующие строки:
-```js
+<code>
 controllers add
 Server listening on: 5000
 GPSMarker listening 3128
 GpsLogger listening 10100
 GpsGate listening 10005
 Profiler listening on 0.0.0.0:3131
-```
+</code>
 
 Если удалось завести таблицы и стартовать сервер, открываем браузер и переходим по адресу<br>
 http://localhost:5000<br>
