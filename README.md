@@ -1,16 +1,17 @@
-﻿## Описание
+﻿### Описание
 Разработка этого сервера не моя, хороший человек по ником Mars не был против его свободного распространения без лицензии.
 Эта версия работает, но может вылетать из-за отсутствия валидации приходящих пакетов. Любой неправильный запрос приведет к ошибке. Над этим нужно работать далее.. 
 
 <img src="https://lh4.googleusercontent.com/-VGSeqHLH1pA/U61bmLLtodI/AAAAAAAAyXY/4VxkTXrWsws/w1152-h597-no/11111111.jpg" alt=""> 
 
-## Порядок установки и работы
+#### Порядок установки и работы
 
 1. Установить базу данных MySql. 
 2. Импортировать в базу таблицы из фала nodemonitor.sql в в папке MySQL Должны создаться база данных nodemonitor в ней две таблицы -> log  и user
 
-Или создать вручную базу "nodemonitor"
+##### Или создать вручную базу "nodemonitor"
 
+```js
 log ->
 CREATE TABLE IF NOT EXISTS `log` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -27,7 +28,9 @@ CREATE TABLE IF NOT EXISTS `log` (
   `sourcedata` text NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=104;
+```
 
+```js
 user ->
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -39,6 +42,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `tracks` text NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+```
 
 Установить Node.js   http://nodejs.org/
 
@@ -53,6 +57,7 @@ D:\> atlas/webserver >
 
 Это значит что сервер не может подсоединиться к базе данных. В файле папка webserver Фалик web-config.json 
 
+```js
 {
 	"port": 5000,   
 	"public" : "../public",  
@@ -63,11 +68,11 @@ D:\> atlas/webserver >
 		"database":"nodemonitor"
 	}
 }
-
+````
 
 "admin"  пользователь который имеет право подключиться к базе (часто это root)
 "password"  пароль от этой базы данных. В нашем случае от базы nodemonitoring  меняете на свой
-"database"  сама наша база (ее имя).
+"database"  сама наша база (ее имя)
 
 Вам надо добиться чтобы в итоге при запуске сервер (выполнения команды в командной строке node web-server.js )  в итоге сервер запустился. 
 
@@ -82,6 +87,7 @@ demo
 .
 
 Сервер неустойчиво, но работает для GPS Logger for Android 
+
 https://play.google.com/store/apps/details?id=com.mendhak.gpslogger&hl=ru
 
 
@@ -93,10 +99,4 @@ https://play.google.com/store/apps/details?id=com.mendhak.gpslogger&hl=ru
 Порт  - > 10100 (по умолчанию у меня забито среди кода)
 Идентификатор устройства – > 123456789012345  (по умолчанию для пользователь demo demo)
 
-<<<<<<< HEAD
 На этом этапе должно уже работать. 
-
-Сервер не отлажен. В основном по тому что нет проверок на валидацию приходящих данных. 
-=======
-На этом этапе должно уже работать.
->>>>>>> origin/master
