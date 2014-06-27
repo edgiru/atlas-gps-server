@@ -9,7 +9,7 @@
 1. Установить базу данных MySql. 
 2. Импортировать в базу таблицы из фала nodemonitor.sql в в папке MySQL Должны создаться база данных nodemonitor в ней две таблицы -> log  и user
 
-##### Или создать вручную базу "nodemonitor"
+Или создать вручную базу "nodemonitor"
 
 ```js
 log ->
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 ```
 
-Установить Node.js отсюда: http://nodejs.org/
+#### Установить Node.js отсюда: http://nodejs.org/
 
 Войти в черный экран (для виндовс Пуск -> Выполнить  : Набрать в окошке cmd и нажать Ok)<br>
 Перейти в директорию куда вы разархивировали проект   D: ввод <br>
