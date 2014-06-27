@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Atlas</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+
+    <script src="../js/FormLogin.js"></script>
+
+</head>
+
+<body onload="<%= init %>">
+
+<!--<body onload="formLogin.init()">-->
+<div id="indexForm" class="table-cell" style=" ">
+    <div class="border-hidden"></div>
+    <div class="center block-authorization" style="display: inline-block;  vertical-align: middle; margin: 20px auto">
+        <div>
+            <!-- Помещаем тело из -->
+              <%-body -%>
+             <div class="border-hidden"></div>
+
+        </div>
+
+    </div>
+</div>
+</body>
+
+<script>
+    document.getElementById("indexForm").style.height = document.height + 'px';
+    document.getElementById("indexForm").style.width = document.width + 'px';
+
+
+</script>
+
+</html>

@@ -1,0 +1,27 @@
+<% if (names && names.length) {names.forEach(function(name){ %>
+
+<div class="device-uno" name="<%= name['imei'] %>" onclick="devices.deviceOnClick('<%= name['imei'] %>', this)">
+    <div class="device-params" style="position: relative">
+        <table class="params" style="width: 100%">
+            <tr>
+                <td name='time'></td><td name='sputnik'></td><td name='speed'></td><td name="battery"></td><td name="active"></td>
+            </tr>
+        </table>
+
+    </div>
+    <div class="device-name" >
+        <%= name['name'] %>
+    </div>
+
+    <div class="eye" onclick="marker.follow('<%= name['imei'] %>', this)">
+
+    </div>
+    <div class="track" onclick="marker.track('<%= name['imei'] %>', this)">
+
+    </div>
+    <div style="clear: both">
+
+    </div>
+
+</div>
+<% })} %>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Atlas</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="../css/loginform.css">
+    <link rel="stylesheet" href="../lib/leaflet/leaflet.css"/>
+    <!--<link rel="stylesheet" href="../lib/leaflet/leaflet.ie.css"/>-->
+    <!-- <script src="/socket.io/socket.io.js"></script>-->
+    <script src="../lib/requirejs/require.js"></script>
+
+    <script>
+        //var socket = io.connect('http://localhost');
+        var socket;
+        function socketio() {
+            socket = io.connect('/',{
+                'reconnect': true,
+                'reconnection delay': 1000
+            });
+           // socket();
+            //socket.emit('connect', document.cookie); //отправить данные клиенту
+            socket.on('disconnect', function () {
+                console.log('socked disconnect')
+            });
+            socket.on('connect', function () {
+                socket.emit('connect', document.cookie); //отправить данные клиенту
+            });
+            socket.on('news', function (data) {
+                console.log(data);
+                marker.news(data);
+                // socket.emit('my other event', { my: 'data' });
+                //  socket.emit('connect', document.cookie); //отправить данные клиенту
+            });
+
+
+
+
+        }
+
+
+    </script>
+
+    <script>
+        var points, devices, tracks;
+        var options = {
+            map:'<%= map %>',
+            devices:'<%=devices%>',
+            options:'<%=options%>',
+            lastData:'<%=lastData%>'
+        }
+
+        for (var opt in options) {
+            try {
+                options[opt] = options[opt].replace(/quot;/g, "");
+                options[opt] = options[opt].replace(/&/g, '"');
+                options[opt] = JSON.parse(options[opt]);
+            } catch (err) {
+                console.log(err);
+            }
+
+        }
+    </script>
+
+    <script>
+
+        require.onError = function(err){
+            //throw err;
+             alert(err);
+            console.log(err);
+        }
+        require.config({
+            waitSeconds: 60
+        });
+
+        require([
+            'lib/jquery/jquery-1.10.2.min',
+            'lib/leaflet/leaflet',
+            'js/app',
+            'js/marker'
+        ], function () {
+            $(document).ready(function (err) {
+                //alert('dd')
+                app.init();
+            });
+        });
+    </script>
+</head>
+<body>
+<table style="width: 100%; height: 100%; position: absolute">
+    <tr>
+        <td style="text-align: center; height: 100%; box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);" valign=" top">
+            <div id="map" style="position: relative">
+            </div>
+        </td>
+    </tr>
+</table>
+<div id="title" style="">
+    <div style="float: left; width: 182px; position: absolute; height: 100%">
+        <table style="width: 100%; height: 100%">
+            <tr>
+                <td>
+                    <div class="button text-center spoiler-device-title " option="devices">
+                        <table>
+                            <tr>
+                                <td>
+                                    Устройства
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+                <td>
+                    <div class="button text-center" option="setting">
+                        <table>
+                            <tr>
+                                <td>
+                                    опции
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div style="float: right; right: 0; width: 182px; position: absolute; height: 100%">
+        <table style="width: 100%; height: 100%">
+            <tr>
+                <td>
+                    <div class="button text-center spoiler-report-title " option="report">
+                        <table>
+                            <tr>
+                                <td>
+                                    Отчеты
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+                <td style="width: 50px">
+                    <div class="button text-center" onclick="app.exit()">
+                        <table>
+                            <tr>
+                                <td>
+                                    Exit
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+</body>
+
+<script>
+
+</script>
+
+</html>

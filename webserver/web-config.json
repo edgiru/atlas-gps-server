@@ -1,0 +1,10 @@
+{
+	"port": 5000,
+	"public" : "../public",
+	"mysql": {
+		"host":"localhost",
+		"user":"root",
+		"password":"",
+		"database":"nodemonitor"
+	}
+}

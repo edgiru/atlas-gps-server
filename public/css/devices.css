@@ -1,0 +1,101 @@
+.device table.params td{
+    font-size: 10px;
+    padding: 0 2px;
+}
+.device table.params td[name=sputnik]{
+    background: url(../img/sputnik.png) top center no-repeat;
+    background-size: 20px;
+    width: 24px;
+    vertical-align: bottom;
+    text-align: center;
+
+}
+.device table.params td[name=speed]{
+    background: url(../img/speed.png) top center no-repeat;
+    background-size: 20px;
+    min-width: 25px;
+    vertical-align: bottom;
+    text-align: center;
+
+}
+
+.device table.params td[name=active]{
+    min-width: 20px;
+    min-height: 30px;
+    vertical-align: bottom;
+    text-align: center;
+
+}
+
+.device table.params td[name=battery]{
+    background: url(../img/battery.png) top center no-repeat;
+    background-size: 20px;
+    min-width: 25px;
+    vertical-align: bottom;
+    text-align: center;
+
+}
+.device-name{
+    min-height: 12px ;
+    font-size: 14px;
+    font-weight: bold;
+    width: 100px;
+    display: block;
+    float: left;
+
+}
+.device .eye{
+    background: url(../img/aim_off.png) center no-repeat;
+    background-size: 16px;
+    width: 30px;
+    height: 20px;
+    display: block;
+    float: right;
+    cursor: pointer;
+}
+.device .eye.on{
+    background: url(../img/aim_on.png) center no-repeat;
+    background-size: 16px;
+}
+.device .track{
+    background: url(../img/track_off.png) center no-repeat;
+    background-size: 16px;
+    width: 30px;
+    height: 20px;
+    display: block;
+    float: right;
+    cursor: pointer;
+
+}
+.device .track.on{
+    background: url(../img/track.png) center no-repeat;
+    background-size: 16px;
+}
+.device table.params{
+	min-height: 24px;
+}
+.device table td[name=time]{
+	min-width: 45px;
+}
+
+
+.device table div.move{
+	width: 20px;
+	height: 30px;
+	background: url(../img/move.png) center no-repeat;
+	background-size: 26px;
+}
+.device table div.stop{
+	width: 20px;
+	height: 30px;
+	background: url(../img/stop.png) center no-repeat;
+	background-size: 16px;
+}
+.device table div.nosignal{
+	width: 20px;
+	height: 20px;
+    margin-top: 2px;
+	background: url(../img/nosignal.png)  no-repeat;
+    background-position: top right;
+	background-size: 16px;
+}

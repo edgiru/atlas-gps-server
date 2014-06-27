@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Atlas</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/loginform.css">
+    <script src="../lib/jquery/jquery-1.10.2.min.js"></script>
+
+    <link rel="stylesheet" href="../lib/leaflet/leaflet.css"/>
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="../lib/leaflet.ie.css"/><![endif]-->
+    <script src="../lib/leaflet/leaflet.js"></script>
+
+
+    <script src="../js/app.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            app.init();
+
+        });
+    </script>
+
+
+</head>
+<body>
+<table style="width: 100%; height: 100%; position: absolute">
+    <tr>
+        <td style="text-align: center; height: 100%; box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);" valign=" top">
+            <div id="map" style="position: relative">
+            </div>
+        </td>
+    </tr>
+</table>
+    <div id="title" style="">
+        <div style="float: left; width: 182px; position: absolute; height: 100%" class="button text-center spoiler-devise-title ">
+            <table style="width: 100%; height: 100%">
+                <tr>
+                    <td>
+                        Устройства
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div style="position: absolute; float: right; right: 0; width: 182px;height: 100% "
+             class="button text-center spoiler-events-title ">
+            <table style="width: 100%">
+                <tr>
+                    <td>
+                        События
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="device spoiler-device" style="">
+        список
+    </div>
+    <div class="events spoiler-events" style=""></div>
+
+
+
+</body>
+
+<script>
+
+</script>
+
+</html>
