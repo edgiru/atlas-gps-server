@@ -39,115 +39,114 @@
         </div>
 
         <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+<a name="%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5" class="anchor" href="#%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5"><span class="octicon octicon-link"></span></a>Описание</h3>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<p>Этот сервер был разработан не мной, а одним хорошим человеком под ником Mars. Разработчик был не против свободного распространения и изменения исходников без лицензии.
+Эта версия работает, но может вылетать из-за отсутствия валидации приходящих ложных или ошибочных пакетов. Любой неправильный запрос приведет к ошибке. Над этим нужно работать далее.. </p>
 
-﻿### Описание
-Этот сервер был разработан не мной, а одним хорошим человеком под ником Mars. Разработчик был не против свободного распространения и изменения исходников без лицензии.
-Эта версия работает, но может вылетать из-за отсутствия валидации приходящих ложных или ошибочных пакетов. Любой неправильный запрос приведет к ошибке. Над этим нужно работать далее.. 
+<p><img src="https://lh4.googleusercontent.com/-VGSeqHLH1pA/U61bmLLtodI/AAAAAAAAyXY/4VxkTXrWsws/w1152-h597-no/11111111.jpg" alt=""></p>
 
-<img src="https://lh4.googleusercontent.com/-VGSeqHLH1pA/U61bmLLtodI/AAAAAAAAyXY/4VxkTXrWsws/w1152-h597-no/11111111.jpg" alt=""> 
+<h4>
+<a name="%D0%9F%D0%BE%D1%80%D1%8F%D0%B4%D0%BE%D0%BA-%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B8-%D0%B8-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B" class="anchor" href="#%D0%9F%D0%BE%D1%80%D1%8F%D0%B4%D0%BE%D0%BA-%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B8-%D0%B8-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B"><span class="octicon octicon-link"></span></a>Порядок установки и работы</h4>
 
-#### Порядок установки и работы
+<ol>
+<li>Установить базу данных MySql. </li>
+<li>Импортировать в базу таблицы из фала nodemonitor.sql в в папке MySQL Должны создаться база данных nodemonitor в ней две таблицы -&gt; log  и user</li>
+</ol><p>Или создать вручную базу "nodemonitor"</p>
 
-1. Установить базу данных MySql. 
-2. Импортировать в базу таблицы из фала nodemonitor.sql в в папке MySQL Должны создаться база данных nodemonitor в ней две таблицы -> log  и user
+<div class="highlight highlight-js"><pre><span class="nx">log</span> <span class="o">-&gt;</span>
+<span class="nx">CREATE</span> <span class="nx">TABLE</span> <span class="nx">IF</span> <span class="nx">NOT</span> <span class="nx">EXISTS</span> <span class="err">`</span><span class="nx">log</span><span class="err">`</span> <span class="p">(</span>
+  <span class="err">`</span><span class="nx">id</span><span class="err">`</span> <span class="kr">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nx">NOT</span> <span class="nx">NULL</span> <span class="nx">AUTO_INCREMENT</span><span class="p">,</span>
+  <span class="err">`</span><span class="nx">imei</span><span class="err">`</span> <span class="nx">text</span><span class="p">,</span>
+  <span class="err">`</span><span class="nx">lat</span><span class="err">`</span> <span class="nx">text</span> <span class="nx">NOT</span> <span class="nx">NULL</span><span class="p">,</span>
+  <span class="err">`</span><span class="nx">lng</span><span class="err">`</span> <span class="nx">text</span> <span class="nx">NOT</span> <span class="nx">NULL</span><span class="p">,</span>
+  <span class="err">`</span><span class="nx">speed</span><span class="err">`</span> <span class="kr">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nx">NOT</span> <span class="nx">NULL</span><span class="p">,</span>
+  <span class="err">`</span><span class="nx">datetime</span><span class="err">`</span> <span class="nx">text</span> <span class="nx">NOT</span> <span class="nx">NULL</span><span class="p">,</span>
+  <span class="err">`</span><span class="nx">zaryad</span><span class="err">`</span> <span class="nx">text</span> <span class="nx">NOT</span> <span class="nx">NULL</span><span class="p">,</span>
+  <span class="err">`</span><span class="nx">azimuth</span><span class="err">`</span> <span class="kr">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nx">NOT</span> <span class="nx">NULL</span><span class="p">,</span>
+  <span class="err">`</span><span class="nx">sputnik</span><span class="err">`</span> <span class="kr">int</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="nx">NOT</span> <span class="nx">NULL</span><span class="p">,</span>
+  <span class="err">`</span><span class="nx">tc</span><span class="err">`</span> <span class="nx">text</span> <span class="nx">NOT</span> <span class="nx">NULL</span><span class="p">,</span>
+  <span class="err">`</span><span class="nx">params</span><span class="err">`</span> <span class="nx">text</span> <span class="nx">NOT</span> <span class="nx">NULL</span><span class="p">,</span>
+  <span class="err">`</span><span class="nx">sourcedata</span><span class="err">`</span> <span class="nx">text</span> <span class="nx">NOT</span> <span class="nx">NULL</span><span class="p">,</span>
+  <span class="nx">PRIMARY</span> <span class="nx">KEY</span> <span class="p">(</span><span class="err">`</span><span class="nx">id</span><span class="err">`</span><span class="p">)</span>
+<span class="p">)</span> <span class="nx">ENGINE</span><span class="o">=</span><span class="nx">InnoDB</span>  <span class="nx">DEFAULT</span> <span class="nx">CHARSET</span><span class="o">=</span><span class="nx">utf8</span> <span class="nx">AUTO_INCREMENT</span><span class="o">=</span><span class="mi">104</span><span class="p">;</span>
+</pre></div>
 
-Или создать вручную базу "nodemonitor"
+<div class="highlight highlight-js"><pre><span class="nx">user</span> <span class="o">-&gt;</span>
+<span class="nx">CREATE</span> <span class="nx">TABLE</span> <span class="nx">IF</span> <span class="nx">NOT</span> <span class="nx">EXISTS</span> <span class="err">`</span><span class="nx">user</span><span class="err">`</span> <span class="p">(</span>
+  <span class="err">`</span><span class="nx">id</span><span class="err">`</span> <span class="kr">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nx">NOT</span> <span class="nx">NULL</span> <span class="nx">AUTO_INCREMENT</span><span class="p">,</span>
+  <span class="err">`</span><span class="nx">name</span><span class="err">`</span> <span class="nx">text</span> <span class="nx">NOT</span> <span class="nx">NULL</span><span class="p">,</span>
+  <span class="err">`</span><span class="nx">pass</span><span class="err">`</span> <span class="nx">text</span> <span class="nx">NOT</span> <span class="nx">NULL</span><span class="p">,</span>
+  <span class="err">`</span><span class="nx">key</span><span class="err">`</span> <span class="nx">text</span> <span class="nx">NOT</span> <span class="nx">NULL</span><span class="p">,</span>
+  <span class="err">`</span><span class="nx">options</span><span class="err">`</span> <span class="nx">text</span> <span class="nx">NOT</span> <span class="nx">NULL</span><span class="p">,</span>
+  <span class="err">`</span><span class="nx">device</span><span class="err">`</span> <span class="nx">text</span> <span class="nx">NOT</span> <span class="nx">NULL</span><span class="p">,</span>
+  <span class="err">`</span><span class="nx">tracks</span><span class="err">`</span> <span class="nx">text</span> <span class="nx">NOT</span> <span class="nx">NULL</span><span class="p">,</span>
+  <span class="nx">PRIMARY</span> <span class="nx">KEY</span> <span class="p">(</span><span class="err">`</span><span class="nx">id</span><span class="err">`</span><span class="p">)</span>
+<span class="p">)</span> <span class="nx">ENGINE</span><span class="o">=</span><span class="nx">InnoDB</span>  <span class="nx">DEFAULT</span> <span class="nx">CHARSET</span><span class="o">=</span><span class="nx">utf8</span> <span class="nx">AUTO_INCREMENT</span><span class="o">=</span><span class="mi">6</span> <span class="p">;</span>
+</pre></div>
 
-<code>
-log ->
-CREATE TABLE IF NOT EXISTS `log` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `imei` text,
-  `lat` text NOT NULL,
-  `lng` text NOT NULL,
-  `speed` int(11) NOT NULL,
-  `datetime` text NOT NULL,
-  `zaryad` text NOT NULL,
-  `azimuth` int(11) NOT NULL,
-  `sputnik` int(2) NOT NULL,
-  `tc` text NOT NULL,
-  `params` text NOT NULL,
-  `sourcedata` text NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=104;
-</code>
+<h4>
+<a name="%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C-nodejs-%D0%BE%D1%82%D1%81%D1%8E%D0%B4%D0%B0-httpnodejsorg" class="anchor" href="#%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C-nodejs-%D0%BE%D1%82%D1%81%D1%8E%D0%B4%D0%B0-httpnodejsorg"><span class="octicon octicon-link"></span></a>Установить Node.js отсюда: <a href="http://nodejs.org/">http://nodejs.org/</a>
+</h4>
 
-<code>
-user ->
-CREATE TABLE IF NOT EXISTS `user` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` text NOT NULL,
-  `pass` text NOT NULL,
-  `key` text NOT NULL,
-  `options` text NOT NULL,
-  `device` text NOT NULL,
-  `tracks` text NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
-</code>
-
-#### Установить Node.js отсюда: http://nodejs.org/
-
-Войти в черный экран (для виндовс Пуск -> Выполнить  : Набрать в окошке cmd и нажать Ok)<br>
+<p>Войти в черный экран (для виндовс Пуск -&gt; Выполнить  : Набрать в окошке cmd и нажать Ok)<br>
 Перейти в директорию куда вы разархивировали проект   D: ввод <br>
-D:\>  cd ./atlas/webserver   ввод (или клавиша энтер ее называют)<br>
+D:&gt;  cd ./atlas/webserver   ввод (или клавиша энтер ее называют)<br>
 Должно получится <br>
-D:\> atlas/webserver >   <br>
+D:&gt; atlas/webserver &gt;   <br></p>
 
-Далее в этой строчке набираете  D:\> atlas/webserver >   node web-server.js<br>
-На этом этапе должна быть ошибка .. много надписей. В самом ER_ACCESS_DENITED_ERROR  бла бла… <br>
+<p>Далее в этой строчке набираете  D:&gt; atlas/webserver &gt;   node web-server.js<br>
+На этом этапе должна быть ошибка .. много надписей. В самом ER_ACCESS_DENITED_ERROR  бла бла… <br></p>
 
-Это значит что сервер не может подсоединиться к базе данных. В файле папка webserver Фалик web-config.json <br>
+<p>Это значит что сервер не может подсоединиться к базе данных. В файле папка webserver Фалик web-config.json <br></p>
 
-<code>
-{
-	"port": 5000,   
-	"public" : "../public",  
-	"mysql": {
-		"host":"localhost",
-		"user":"admin",		//"admin"  пользователь который имеет право подключиться к базе (часто это root)
-		"password":"pass_from_database",	//"password"  пароль от этой базы данных. В нашем случае от базы nodemonitoring  меняете на свой
-		"database":"nodemonitor"	//"database"  сама наша база (ее имя)
-	}
-}
-</code>
+<div class="highlight highlight-js"><pre><span class="p">{</span>
+    <span class="s2">"port"</span><span class="o">:</span> <span class="mi">5000</span><span class="p">,</span>   
+    <span class="s2">"public"</span> <span class="o">:</span> <span class="s2">"../public"</span><span class="p">,</span>  
+    <span class="s2">"mysql"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"host"</span><span class="o">:</span><span class="s2">"localhost"</span><span class="p">,</span>
+        <span class="s2">"user"</span><span class="o">:</span><span class="s2">"admin"</span><span class="p">,</span>     <span class="c1">//"admin"  пользователь который имеет право подключиться к базе (часто это root)</span>
+        <span class="s2">"password"</span><span class="o">:</span><span class="s2">"pass_from_database"</span><span class="p">,</span>    <span class="c1">//"password"  пароль от этой базы данных. В нашем случае от базы nodemonitoring  меняете на свой</span>
+        <span class="s2">"database"</span><span class="o">:</span><span class="s2">"nodemonitor"</span>    <span class="c1">//"database"  сама наша база (ее имя)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
 
-Вам надо добиться чтобы при запуске сервер (выполнения команды в командной строке node web-server.js ) выдал сделующие строки:
-<code>
-controllers add
-Server listening on: 5000
-GPSMarker listening 3128
-GpsLogger listening 10100
-GpsGate listening 10005
-Profiler listening on 0.0.0.0:3131
-</code>
+<p>Вам надо добиться чтобы при запуске сервер (выполнения команды в командной строке node web-server.js ) выдал сделующие строки:</p>
 
-Если удалось завести таблицы и стартовать сервер, открываем браузер и переходим по адресу<br>
+<div class="highlight highlight-js"><pre><span class="nx">controllers</span> <span class="nx">add</span>
+<span class="nx">Server</span> <span class="nx">listening</span> <span class="nx">on</span><span class="o">:</span> <span class="mi">5000</span>
+<span class="nx">GPSMarker</span> <span class="nx">listening</span> <span class="mi">3128</span>
+<span class="nx">GpsLogger</span> <span class="nx">listening</span> <span class="mi">10100</span>
+<span class="nx">GpsGate</span> <span class="nx">listening</span> <span class="mi">10005</span>
+<span class="nx">Profiler</span> <span class="nx">listening</span> <span class="nx">on</span> <span class="mf">0.0</span><span class="p">.</span><span class="mf">0.0</span><span class="o">:</span><span class="mi">3131</span>
+</pre></div>
+
+<p>Если удалось завести таблицы и стартовать сервер, открываем браузер и переходим по адресу<br>
 http://localhost:5000<br>
-5000 – это  "port": 5000,   web-config.json (вы можете изменить на любой другой свободный у вас порт к примеру: 80)
+5000 – это  "port": 5000,   web-config.json (вы можете изменить на любой другой свободный у вас порт к примеру: 80)</p>
 
-Если вы создавали таблицу в базе данных импортом, то по умолчанию можно войти под
+<p>Если вы создавали таблицу в базе данных импортом, то по умолчанию можно войти под</p>
 
-login: demo<br>
-pass:  demo
+<p>login: demo<br>
+pass:  demo</p>
 
-Сервер неустойчиво, но работает для GPS Logger for Android 
+<p>Сервер неустойчиво, но работает для GPS Logger for Android </p>
 
-https://play.google.com/store/apps/details?id=com.mendhak.gpslogger&hl=ru
+<p><a href="https://play.google.com/store/apps/details?id=com.mendhak.gpslogger&amp;hl=ru">https://play.google.com/store/apps/details?id=com.mendhak.gpslogger&amp;hl=ru</a></p>
 
-Его настроки:<br>
-Настройки -> Автоматическая отрпавка – OpenGTS настройка<br>
-Включить OpenGTS  -> галка<br>
-Включить автоматическую отправку координат -> галка<br>
-Сервер -> ip вашего сервера (нужно узнать ip вашего компьютера например по ссылке http://2ip.ru/ )<br>
-Порт  - > 10100 (по умолчанию у меня забито среди кода)<br>
-Идентификатор устройства – > 123456789012345  (по умолчанию для пользователя: demo пароль: demo)<br>
+<p>Его настроки:<br>
+Настройки -&gt; Автоматическая отрпавка – OpenGTS настройка<br>
+Включить OpenGTS  -&gt; галка<br>
+Включить автоматическую отправку координат -&gt; галка<br>
+Сервер -&gt; ip вашего сервера (нужно узнать ip вашего компьютера например по ссылке <a href="http://2ip.ru/">http://2ip.ru/</a> )<br>
+Порт  - &gt; 10100 (по умолчанию у меня забито среди кода)<br>
+Идентификатор устройства – &gt; 123456789012345  (по умолчанию для пользователя: demo пароль: demo)<br></p>
 
-На этом этапе должно уже работать. 
+<p>На этом этапе должно уже работать. </p>
+      </section>
 
+    </div>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
     
   </body>
