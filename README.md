@@ -3,7 +3,9 @@
 1. Установить базу данных MySql. 
 2. Импортировать в базу таблицы из фала nodemonitor.sql в в папке MySQL Должны создаться база данных nodemonitor в ней две таблицы -> log  и user
 
-Или создать вручную базу nodemonitor;
+
+Или создать вручную базу nodemonitor
+
 log ->
 CREATE TABLE IF NOT EXISTS `log` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -19,7 +21,7 @@ CREATE TABLE IF NOT EXISTS `log` (
   `params` text NOT NULL,
   `sourcedata` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=104 ; 
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=104;
 
 user ->
 CREATE TABLE IF NOT EXISTS `user` (
