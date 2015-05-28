@@ -1,0 +1,13 @@
+{
+  "name": "atlas",
+  "version": "1.0.0",
+  "description": "GPS tracker monitoring",
+  "main": "server.js",
+  "repository": "",
+  "author": "Mars",
+  "dependencies": {
+    "app.init": "~0.2.8",
+    "ejs": "~3.2.4",
+    "ejs-locals": "~0.9.14"
+  }
+}
