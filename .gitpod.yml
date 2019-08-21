@@ -1,7 +1,6 @@
-image: gitpod/workspace-full
 tasks:
-  - init: yarn install
-    command: yarn build && pip install node && node webserver/web-server.js
+  - init: pip install node
+    command: node webserver/web-server.js
 ports:
   - port: 8080
     onOpen: open-browser
