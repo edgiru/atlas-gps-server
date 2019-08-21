@@ -1,6 +1,6 @@
 tasks:
   - init: pip install node
-    command: pip install mysql php && node webserver/web-server.js
+    command: pip install mysql php express && node webserver/web-server.js
 ports:
   - port: 8000
     onOpen: open-browser
